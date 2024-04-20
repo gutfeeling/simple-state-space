@@ -5,13 +5,6 @@ from torch import nn
 import torch.nn.functional as F
 
 
-def lecun_normal_init(tensor):
-    fan_in = tensor.size(1)
-    std = torch.sqrt(torch.tensor(1.0 / fan_in))
-    with torch.no_grad():
-        tensor.normal_(0, std)
-
-
 @dataclass
 class ModelArgs:
     sequence_length: int = 28
